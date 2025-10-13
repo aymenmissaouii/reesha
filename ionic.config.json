@@ -1,0 +1,7 @@
+{
+  "name": "dhyati",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
