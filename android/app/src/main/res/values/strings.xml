@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">dhyati</string>
+    <string name="title_activity_main">dhyati</string>
+    <string name="package_name">com.dhayati</string>
+    <string name="custom_url_scheme">com.dhayati</string>
+</resources>

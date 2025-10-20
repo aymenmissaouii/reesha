@@ -1,0 +1,72 @@
+<!-- <ion-header>
+  <ion-toolbar class="toolbar-primary">
+    <ion-buttons slot="start">
+      <ion-button fill="clear">
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>
+      <div class="title-stack">
+        <span class="user-name">Abdallah Ahmed</span>
+      </div>
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear">
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true" class="ion-padding toolbar-primary" dir="rtl">
+
+  <div class="content">
+  <!-- Helper Tools -->
+  <section class="section-card">
+    <div class="section-header">
+      <h2>أدوات المساعدة</h2>
+      <a class="see-more" href="#">رؤية المزيد &#187;</a>
+    </div>
+
+    <div class="tools-grid" >
+      <app-kpi-card *ngFor="let help of helps" [link]="help.link" [label]="help.label"></app-kpi-card>
+    </div>
+  </section>
+
+  <!-- Batches / دورات -->
+  <section class="section-card">
+    <div class="section-header">
+      <h2>الدورات <span class="count">(4)</span></h2>
+      <app-button icon="add-outline" text="أضف المزيد" (senData)="addMore($event)"></app-button>
+      <!-- <ion-button size="small" class="add-more" shape="round">
+        <ion-icon slot="start" name="add-outline"></ion-icon>
+        أضف المزيد
+      </ion-button> -->
+    </div>
+
+    <!-- Empty state card -->
+     <app-empty-state></app-empty-state>
+    <!-- <div class="empty-card">
+      <div class="empty-illustration">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-icon name="medkit-outline" class="overlap"></ion-icon>
+        <ion-icon name="paw-outline" class="chicken"></ion-icon>
+      </div>
+
+      <ion-button class="add-first" fill="clear" shape="round">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+
+      <p class="hint">لا توجد أي دورة حالياً، أضف أول دورة</p>
+    </div> -->
+  </section>
+
+  <div style="height: 16px"></div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,67 @@
+.empty-card {
+  background: #fff;
+  border: 1px dashed #cdd6ff;
+  border-radius: 16px;
+  padding: 18px 12px 14px;
+  text-align: center;
+  min-height: 170px;
+  display: grid;
+  place-items: center;
+  gap: 8px;
+}
+
+.empty-illustration {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  // width: 140px;
+  // height: 80px;
+  color: #9db0ff;
+
+  ion-icon {
+    font-size: 60px;
+  }
+
+  ion-img{
+    width: 294px;
+    height: 294px;
+  }
+
+  .overlap {
+    position: absolute;
+    inset-inline-end: -8px;
+    top: 2px;
+    font-size: 42px;
+    color: #a6b6ff;
+  }
+
+  .chicken {
+    position: absolute;
+    bottom: -8px;
+    inset-inline-start: -6px;
+    font-size: 36px;
+    color: #ffb15c;
+  }
+}
+
+.add-first {
+  --border-radius: 999px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  height: 38px;
+  width: 38px;
+  border: 2px dashed var(--primary);
+  border-radius: 999px;
+  box-sizing: border-box;
+
+  ion-icon {
+    font-size: 20px;
+    color: var(--primary);
+  }
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  color: #97a0c0;
+}

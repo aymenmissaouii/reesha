@@ -8,8 +8,20 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./features/auth/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./features/auth/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./features/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
 ];
 
