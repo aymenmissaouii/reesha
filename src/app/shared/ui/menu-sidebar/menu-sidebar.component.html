@@ -1,0 +1,47 @@
+<ion-menu side="start" [contentId]="contentId" [menuId]="menuId">
+  <ion-content class="ion-padding">
+    <div class="header">
+      <div class="icon">
+        <ion-icon side="end" name="close-outline" (click)="close()"></ion-icon>
+      </div>
+    <div class="hero">
+      <div class="hero-row">
+        <ion-avatar class="avatar">
+          <ion-icon name="person-outline"></ion-icon>
+        </ion-avatar>
+        <div class="uinfo">
+          <div class="name">{{ user.name }}</div>
+          <div class="role">{{ user.role }}</div>
+        </div>
+      </div>
+    </div>
+    </div>
+       <!-- Menu items -->
+    <ion-list lines="none" class="menu-list">
+      <ion-item button routerLink="/tabs/profile">
+        <ion-icon slot="start" name="person-outline"></ion-icon>
+        <ion-label>الملف الشخصي</ion-label>
+      </ion-item>
+
+      <ion-item button routerLink="/tabs/reports">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        <ion-label>إحصائيات</ion-label>
+      </ion-item>
+
+      <ion-item button routerLink="/tabs/settings">
+        <ion-icon slot="start" name="settings-outline"></ion-icon>
+        <ion-label>إعدادات</ion-label>
+      </ion-item>
+
+      <ion-item button routerLink="/tabs/help">
+        <ion-icon slot="start" name="help-circle-outline"></ion-icon>
+        <ion-label>المساعدة والتعليقات</ion-label>
+      </ion-item>
+
+      <ion-item button class="logout" (click)="null">
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        <ion-label>تسجيل الخروج</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>

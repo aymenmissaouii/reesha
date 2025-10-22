@@ -1,3 +1,20 @@
-<p>
-  input works!
-</p>
+<!-- put dir="rtl" on the container/page -->
+<div dir="rtl" class="field">
+  <div class="field-label">{{label}}:</div>
+
+  <ion-item class="soft-input" lines="none">
+    <!-- left rounded info icon -->
+    <div slot="end" class="left-icon">
+      <ion-icon [name]="icon"></ion-icon>
+    </div>
+    <!-- the input -->
+    <ion-input
+      [type]="type"
+      [placeholder]="placeholder"
+      [value]="value"
+      (ionInput)="onInput($event)"
+      (ionChange)="onChange($event)"
+      >
+    </ion-input>
+  </ion-item>
+</div>

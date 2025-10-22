@@ -12,6 +12,8 @@ export class ButtonComponent  implements OnInit {
 
   @Input() icon:string | undefined;
   @Input() text:string |undefined;
+  @Input() slot: 'start' | 'end' | 'icon-only' = 'end';
+  @Input() disabled: boolean = false;
   @Output() senData: EventEmitter<any> = new EventEmitter();
   constructor() { }
 

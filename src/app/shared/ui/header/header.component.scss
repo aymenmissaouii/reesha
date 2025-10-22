@@ -1,0 +1,26 @@
+ion-header{
+  ion-toolbar{
+    --background: transparent !important;
+    --border-width:0px !important;
+    padding: 10px;
+    box-shadow: none;
+    color: var(--ion-color-primary-contrast);
+  }
+}
+
+ion-buttons{
+    background: #ffffff25 !important;
+    border-radius: 10px;
+    border-radius: 10px;
+    width: 46px;
+    height: 46px;
+    display: grid;
+    justify-content: center;
+ion-icon, ion-menu-button{
+  font-size: 20px;
+}
+}
+ion-menu-button{
+  // --background: var(--ion-color-primary-contrast) !important;
+  color: var(--ion-color-primary-contrast) !important;
+}

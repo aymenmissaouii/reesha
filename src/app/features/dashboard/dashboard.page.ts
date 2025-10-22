@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { ModalComponent } from 'src/app/shared/ui/modal/modal.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -33,11 +36,18 @@ export class DashboardPage implements OnInit {
       link:"assets/helps_icons/ventilateur.png",
       label:"تشغيل الشفاطات"
     },
-  ]
+  ];
 
-  constructor() { }
+  constructor(
+    private modalCtrl: ModalController,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  openAccordingFn(){
+    this.router.navigate(['/cost']);
   }
 
   addMore(event:any){

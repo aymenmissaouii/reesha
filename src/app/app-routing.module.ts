@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'cost',
     pathMatch: 'full'
   },
   {
@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./features/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'cost',
+    loadChildren: () => import('./features/cost/cost.module').then( m => m.CostPageModule)
   },
 ];
 

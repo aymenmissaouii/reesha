@@ -10,6 +10,9 @@ import { DashboardPage } from './dashboard.page';
 import { KpiCardComponent } from 'src/app/shared/ui/kpi-card/kpi-card.component';
 import { ButtonComponent } from 'src/app/shared/ui/button/button.component';
 import { EmptyStateComponent } from 'src/app/shared/ui/empty-state/empty-state.component';
+import { HeaderComponent } from 'src/app/shared/ui/header/header.component';
+import { ModalComponent } from 'src/app/shared/ui/modal/modal.component';
+import { AccordionComponent } from "src/app/shared/ui/accordion/accordion.component";
 
 @NgModule({
   imports: [
@@ -19,8 +22,11 @@ import { EmptyStateComponent } from 'src/app/shared/ui/empty-state/empty-state.c
     DashboardPageRoutingModule,
     KpiCardComponent,
     ButtonComponent,
-    EmptyStateComponent
-  ],
+    EmptyStateComponent,
+    HeaderComponent,
+    ModalComponent,
+    AccordionComponent
+],
   declarations: [DashboardPage]
 })
 export class DashboardPageModule {}

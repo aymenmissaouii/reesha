@@ -1,0 +1,17 @@
+<div class="ion-page" id="main-content">
+  <ion-header mode="ios">
+    <ion-toolbar>
+      <!-- <ion-buttons slot="start" >
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-buttons> -->
+      <ion-buttons slot="start">
+        <app-ring-notifications></app-ring-notifications>
+      </ion-buttons>
+      <ion-title>{{title}}</ion-title>
+      <ion-buttons slot="end" (click)="toggle()">
+        <!-- <ion-menu-button ></ion-menu-button> -->
+         <ion-icon id="main-content" contentId="main-content" name="menu-outline"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+</div>

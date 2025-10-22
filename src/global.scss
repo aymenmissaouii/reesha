@@ -32,3 +32,36 @@
 // @import "primeng/resources/themes/lara-light-blue/theme.css";
 // @import "primeng/resources/primeng.css";
 // @import "primeicons/primeicons.css";
+
+:host {
+  --primary: #577AF9;
+  --tile-bg: #ffffff;
+  --tile-border: #e8ecf7;
+  --section-bg: #f6f8ff;
+}
+
+.toolbar-primary {
+  --background: var(--primary);
+  --color: #fff;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 0 6px 16px rgba(87, 122, 249, 0.25);
+}
+
+ion-content {
+  // --background: #eef2ff; /* soft blue like the mock */
+  --padding-start:0px !important;
+  --padding-bottom:0px !important;
+  --padding-top:0px !important;
+  --padding-end:0px !important;
+  .content{
+    background: #eef2ff;
+    width: 100%;
+    height: 100%;
+    margin-top: 18%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 10px 0;
+  }
+}
+

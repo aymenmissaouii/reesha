@@ -1,0 +1,97 @@
+ion-content{
+  --padding-start: 0px;
+  --padding-end: 0px;
+  --padding-top: 0px;
+}
+.header{
+  background-image: url('/assets/svg/navbar_menu_background.svg');
+  min-height: 333px;
+  .icon{
+    display: flex;
+    justify-content: end;
+    padding: 20px;
+
+    ion-icon{
+      font-size: 20px;
+    }
+  }
+}
+
+ion-menu{
+  --min-width: 80%;
+}
+
+
+
+/* Drawer width (adjust as you like) */
+ion-menu {
+  --width: 300px;
+  --background: #fff;
+  --color: #1e2a3b;
+}
+
+/* Blue header */
+.hero {
+  position: relative;
+  background: #577AF9;
+  color: #fff;
+  padding: 24px 18px 28px; /* extra bottom to cover the wave */
+
+  .hero-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .avatar {
+    width: 54px; height: 54px;
+    background: rgba(255,255,255,.15);
+    border: 2px solid rgba(255,255,255,.85);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    ion-icon { font-size: 28px; color: #fff; }
+  }
+
+  .uinfo {
+    .name { font-weight: 700; font-size: 15px; line-height: 1.2; }
+    .role { opacity: .9; font-size: 12px; }
+  }
+
+  /* the little white curved shape at bottom */
+  .wave {
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    width: 100%; height: 32px;
+    display: block;
+  }
+}
+
+/* List styling to match the mock */
+.menu-list {
+  padding: 14px 10px;
+
+  ion-item {
+    --background: transparent;
+    --padding-start: 10px;
+    --inner-padding-end: 10px;
+    border-radius: 12px;
+    min-height: 44px;
+    margin: 2px 6px;
+
+    ion-icon { color: #263238; opacity: 0.85; }
+    ion-label { font-weight: 600; color: #263238; }
+  }
+
+  .logout {
+    margin-top: 8px;
+    ion-icon, ion-label { color: #1f2937; }
+  }
+
+  /* active/hover effect (web/desktop) */
+  ion-item:hover { background: rgba(0,0,0,.035); }
+}
+
+/* Make sure icons don’t mirror in RTL */
+:host([dir='rtl']) ion-item ion-icon[slot="start"] {
+  margin-inline-end: 10px;
+}
