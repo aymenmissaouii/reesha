@@ -1,22 +1,42 @@
-<ion-accordion-group expand="inset" [multiple]="true" [value]="['first']" [animated]="true">
-  <ion-accordion value="first">
-    <ion-item slot="header">
-      <ion-label>معطيات عن الكتكوت</ion-label>
-    </ion-item>
-    <div class="ion-padding" slot="content">
-      First Content
-    </div>
-  </ion-accordion>
-  <ion-accordion value="second">
-    <ion-item slot="header">
-      <ion-label>Second Accordion</ion-label>
-    </ion-item>
-    <div class="ion-padding" slot="content">Second Content</div>
-  </ion-accordion>
-  <ion-accordion value="third">
-    <ion-item slot="header">
-      <ion-label>Third Accordion</ion-label>
-    </ion-item>
-    <div class="ion-padding" slot="content">Third Content</div>
-  </ion-accordion>
+<ion-accordion-group #accordionGroup expand="inset" [multiple]="false" [value]="value" [animated]="true">
+  @for (item of accordingData; track $index) {
+      <ion-accordion [value]="item.value">
+        <ion-item slot="header">
+          @if (item.trash != null && item.trash != undefined){
+          <ion-icon slot="start" name="trash-outline" color="danger" size="small" (click)="deleteItem($index)"></ion-icon>
+          }
+          <ion-label>{{item.title}}</ion-label>
+
+        </ion-item>
+
+          <div class="ion-padding" slot="content">
+             @for (i of item.inputs; track $index) {
+              @if ( i.type !== 'select' ) {
+              <app-input [label]="i.label" [type]="i.type" [placeholder]="i.placeholder"></app-input>
+              }
+              @if (i.type == 'select') {
+              <ion-select slot="end" [label]="i.label"  mode="ios" (ionChange)="handleChange($event, i.value)">
+
+                @for (v of i.value; track $index) {
+                <ion-select-option [value]="v.value" [disabled]="v.disabled">{{v.label}}</ion-select-option>
+                }
+              </ion-select>
+              }
+
+            }
+            <div class="general_data">
+            <p>
+              @if (item.total_price != null && item.total_price != undefined) {
+              السعر الجملي : {{item.total_price}} د.ل
+             }
+             </p>
+             @if (item.age != null && item.age != undefined) {
+              <p>العمر :  {{item.age}} يوم</p>
+             }
+
+            </div>
+             <app-button icon="checkmark-outline" text="حفظ" (click)="toggleAccordion($index+1)"></app-button>
+          </div>
+      </ion-accordion>
+  }
 </ion-accordion-group>
