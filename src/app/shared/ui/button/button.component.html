@@ -1,1 +1,3 @@
-<ion-button [disabled]="disabled" (click)="senData.emit()"><ion-icon [slot]="slot" [name]="icon"></ion-icon> {{text}}</ion-button>
+<ion-button [disabled]="disabled" (click)="handleClick()" [color]="color">
+  <ion-icon [slot]="slot" [name]="icon"></ion-icon> {{text}}
+</ion-button>

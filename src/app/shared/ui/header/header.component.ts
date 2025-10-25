@@ -16,7 +16,7 @@ export class HeaderComponent  implements OnInit {
   @Input() left_icon: string = '';
   @Input() menuId = 'main-menu';
 
-  @ViewChild('bellBtn', { read: ElementRef }) bellBtn!: ElementRef;
+  @ViewChild('bellBtn', { read: ElementRef }) bellBtn?: ElementRef;
   constructor(
     private menuCtrl: MenuController,
     private animCtrl: AnimationController
@@ -27,8 +27,12 @@ export class HeaderComponent  implements OnInit {
   toggle() { this.menuCtrl.toggle('main-menu'); }
 
   ngAfterViewInit() {
-  const icon = this.bellBtn.nativeElement.querySelector('ion-icon');
-  const ring = this.animCtrl
+    if (!this.bellBtn) {
+            console.error('Bell button element not found in the template.');
+            return;
+    }
+    const icon = this.bellBtn.nativeElement.querySelector('ion-icon');
+    const ring = this.animCtrl
     .create()
     .addElement(icon)
     .duration(1600)

@@ -1,11 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { IonicModule, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-menu-sidebar',
   templateUrl: './menu-sidebar.component.html',
   styleUrls: ['./menu-sidebar.component.scss'],
-  imports: [ IonicModule ],
+  imports: [ IonicModule, RouterLink ],
   standalone: true
 })
 export class MenuSidebarComponent  implements OnInit {

@@ -1,6 +1,6 @@
 
   <app-button id="open-modal" icon="add-outline" text="أضف المزيد"></app-button>
-  <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]" [isOpen]="isOpen">
+  <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
     <ng-template>
       <div class="block">
         <!-- Block of Content -->
@@ -14,7 +14,7 @@
           ></app-input>
          }
          <div class="button">
-          <app-button icon="checkmark-outline" text="حفظ" slot="start" [disabled]="!allFilled" (click)="saveData()"></app-button>
+          <app-button icon="checkmark-outline" text="حفظ" slot="start" [disabled]="!allFilled" (senData)="saveData()"></app-button>
          </div>
       </div>
     </ng-template>

@@ -5,6 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { HeaderComponent } from 'src/app/shared/ui/header/header.component';
+import { ButtonComponent } from 'src/app/shared/ui/button/button.component';
+import { InputComponent } from 'src/app/shared/ui/input/input.component';
+import { RouterLink } from '@angular/router';
 
 
 @NgModule({
@@ -12,7 +16,11 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    HeaderComponent,
+    ButtonComponent,
+    InputComponent,
+    RouterLink
   ],
   declarations: [HomePage]
 })

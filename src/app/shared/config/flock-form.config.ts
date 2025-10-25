@@ -104,4 +104,75 @@ export const COST_FLOCK_INPUTS: AccordingItem[] = [
 ];
 
 
-export const SELLS_FLOCK_INPUTS: AccordingItem[] = [];
+export const SELLS_FLOCK_INPUTS: AccordingItem[] = [
+    {
+    title:'مبيعات المذبوحات',
+    value:'first',
+    inputs:[
+    {
+      label: 'إسم المذبح',
+      type: 'text',
+      placeholder: 'الإسم',
+      icon: 'information-circle-outline',
+      value: ''
+    },
+    {
+      label: 'تاريخ البيع',
+      type: 'date',
+      placeholder: 'التاريخ',
+      icon: 'information-circle-outline',
+      value: ''
+    },
+    {
+      label: 'صافي الوزن بالكيلو',
+      type: 'number',
+      placeholder: 'الوزن',
+      icon: 'information-circle-outline',
+      value: ''
+    },
+    {
+      label: 'سعر الكيلو الواحد',
+      type: 'number',
+      placeholder: 'سعر الكيلو',
+      icon: 'information-circle-outline',
+      value: ''
+    },
+        {
+      label: 'عدد الطيور المباعة',
+      type: 'number',
+      placeholder: 'العدد',
+      icon: 'information-circle-outline',
+      value: ''
+    },
+  ],
+  total_price: 0,
+ },
+  {
+    title:'مبيعات أخرى',
+    value:'third',
+    inputs:[
+    {
+      label: 'أدخل الإسم',
+      type: 'text',
+      placeholder: 'مثال: السماد...',
+      icon: 'information-circle-outline',
+      value: ""
+    },
+    {
+      label: 'أدخل السعر',
+      type: 'text',
+      placeholder: 'السعر',
+      icon: 'plus-outline',
+      value: ""
+    },
+    {
+      label: 'أضف مبيع آخر',
+      type: 'button',
+      placeholder: '',
+      icon: 'add-circle-outline',
+      value: ""
+    },
+    ],
+    total_price: 0,
+  },
+];

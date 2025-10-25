@@ -107,7 +107,7 @@ export class AccordionComponent  implements OnInit {
             total_price: 0,
             trash: true
         };
-        minus = 0;
+        // minus = 0;
       }
 
       const insertionIndex = this.accordingData.length - minus;
@@ -118,20 +118,50 @@ export class AccordionComponent  implements OnInit {
       }, 0);
   }
 
-  deleteItem(event: any) {
-    let value = this.accordingData[event].value;
+  addMoreOptions(index:number) {
+
+    this.accordingData[1].inputs.splice(index, 0,     {
+      label: 'أدخل الإسم',
+      type: 'text',
+      placeholder: 'مثال: السماد...',
+      icon: 'information-circle-outline',
+      value: ""
+    },
+    {
+      label: 'أدخل السعر',
+      type: 'text',
+      placeholder: 'السعر',
+      icon: 'plus-outline',
+      value: ""
+    },)
+  }
+
+
+deleteItem(indexToDelete: number) {
+
+    const itemValue = this.accordingData[indexToDelete].value;
 
     const length = this.accordingData.length -1;
+    const reenableOption = this.accordingData[length].inputs[0].value.find((option: any) => option.value === itemValue);
 
-    const deletedItem = this.accordingData[length].inputs[0].value.find((item: any) => item.value === value);
+    if (reenableOption) {
+        reenableOption.disabled = false; // Re-enable the option in the select dropdown
+    }
 
-    deletedItem.disabled = false;
+    // 3. Delete the item from the accordion list
+    this.accordingData.splice(indexToDelete, 1);
 
-    this.accordingData.splice(event, 1);
+    if (this.accordingData.length === 0) {
+        this.accordionGroup.value = undefined;
+        return;
+    }
 
     setTimeout(() => {
-        this.toggleAccordion(event);
+        const nextIndex = (indexToDelete < this.accordingData.length) ? indexToDelete : this.accordingData.length - 1;
+
+        // Use the dedicated toggle function
+        this.toggleAccordion(nextIndex);
     }, 0);
-  }
+}
 
 }

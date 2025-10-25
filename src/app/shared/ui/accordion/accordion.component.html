@@ -11,7 +11,7 @@
 
           <div class="ion-padding" slot="content">
              @for (i of item.inputs; track $index) {
-              @if ( i.type !== 'select' ) {
+              @if ( i.type !== 'select' && i.type !== 'button') {
               <app-input [label]="i.label" [type]="i.type" [placeholder]="i.placeholder"></app-input>
               }
               @if (i.type == 'select') {
@@ -22,8 +22,11 @@
                 }
               </ion-select>
               }
-
+              @if (i.type == 'button') {
+                <app-button [icon]="i.icon" [text]="i.label" color="medium" (click)="addMoreOptions($index)"></app-button>
+              }
             }
+
             <div class="general_data">
             <p>
               @if (item.total_price != null && item.total_price != undefined) {

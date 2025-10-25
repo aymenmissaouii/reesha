@@ -14,9 +14,14 @@ export class ButtonComponent  implements OnInit {
   @Input() text:string |undefined;
   @Input() slot: 'start' | 'end' | 'icon-only' = 'end';
   @Input() disabled: boolean = false;
-  @Output() senData: EventEmitter<any> = new EventEmitter();
+  @Output() senData: EventEmitter<void> = new EventEmitter();
+  @Input() color: string | undefined;
   constructor() { }
 
   ngOnInit() {}
+
+  handleClick() {
+    this.senData.emit();
+  }
 
 }

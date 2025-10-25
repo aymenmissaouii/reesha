@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { IonModal } from '@ionic/angular/standalone';
 import { ButtonComponent } from '../button/button.component';
 import { InputComponent } from '../input/input.component';
 
@@ -14,6 +15,7 @@ export class ModalComponent  implements OnInit {
 
   public isOpen: boolean = false;
   @Output() save: EventEmitter<any> = new EventEmitter<any>();
+  @ViewChild(IonModal) modal!: IonModal;
 
   inputs = [
     {
@@ -71,6 +73,8 @@ get allFilled(): boolean {
 
 saveData(){
   this.save.emit(this.inputs);
+  this.modal?.dismiss();
+  // this.isOpen = false;
 }
 
 }

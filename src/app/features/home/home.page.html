@@ -1,0 +1,89 @@
+  <ion-content [fullscreen]="true" class="ion-padding toolbar-primary" dir="rtl">
+
+  <div class="header">
+    <app-header title="Abdallah Ahmed" right_icon="" left_icon=""></app-header>
+  </div>
+
+  <div class="content">
+<div class="cards-container">
+    <ion-card class="custom-card cost-card" routerLink="/cost">
+      <ion-card-content class="ion-text-center">
+        <ion-img src="assets/home/cost.png" alt="Cost Icon" class="card-icon"></ion-img>
+        <ion-card-title class="card-title">المشتريات</ion-card-title>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="custom-card sales-card" routerLink="/sells">
+      <ion-card-content class="ion-text-center">
+        <ion-img src="assets/home/sells.png" alt="Sales Icon" class="card-icon"></ion-img>
+        <ion-card-title class="card-title">المبيعات</ion-card-title>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div class="summary-section ion-margin-top">
+    <div class="summary-item expenses-item">
+      <div class="label">المصاريف</div>
+      <div class="value">2,150.5 د.ل</div>
+    </div>
+    <div class="summary-divider"></div>
+    <div class="summary-item income-item">
+      <div class="label">المداخيل</div>
+      <div class="value">8,270.2 د.ل</div>
+    </div>
+  </div>
+
+  <h2 class="section-title ion-text-start ion-margin-top ion-margin-bottom">التفاصيل</h2>
+
+  <ion-list class="custom-list ion-no-padding">
+    <ion-item class="custom-item">
+      <ion-label position="stacked" class="input-label ion-text-end">الإنفاق اليومي :</ion-label>
+      <ion-input type="number" placeholder="الكمية"></ion-input>
+      <ion-icon name="information-circle-outline" slot="start" class="input-info-icon"></ion-icon>
+    </ion-item>
+
+    <ion-item class="custom-item ion-margin-top">
+      <ion-label position="stacked" class="input-label ion-text-end">الإستهلاك اليومي :</ion-label>
+      <ion-input type="number" placeholder="الكمية"></ion-input>
+      <ion-icon name="information-circle-outline" slot="start" class="input-info-icon"></ion-icon>
+    </ion-item>
+  </ion-list>
+  </div>
+  </ion-content>
+<!--
+  <ion-content [fullscreen]="true" class="ion-padding">
+    <ion-list *ngIf="products().length; else skeleton">
+      <ion-item *ngFor="let p of products(); trackBy: trackById">
+        <ion-label>
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.price | currency }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ng-template #skeleton>
+      <ion-list>
+        <ion-item *ngFor="let i of [0,1,2,3,4,5]">
+          <ion-label>
+            <h3><ion-skeleton-text animated style="width:60%"></ion-skeleton-text></h3>
+            <p><ion-skeleton-text animated style="width:40%"></ion-skeleton-text></p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ng-template>
+
+    <ion-item lines="none">
+      <ion-button id="open-analytics" #openAnalytics expand="block">Show analytics</ion-button>
+    </ion-item>
+
+    @defer (on interaction(openAnalytics); prefetch on idle) {
+    } @placeholder {
+      <div style="padding:12px">
+        <ion-skeleton-text animated style="width:100%;height:180px"></ion-skeleton-text>
+      </div>
+    } @loading (after 150ms; minimum 400ms) {
+      <ion-item lines="none"><ion-label>Loading analytics…</ion-label></ion-item>
+    } @error {
+      <ion-item color="danger"><ion-label>Failed to load analytics.</ion-label></ion-item>
+    }
+  </ion-content> -->
