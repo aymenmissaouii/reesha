@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { ModalComponent } from 'src/app/shared/ui/modal/modal.component';
+import { DatabaseService, User } from 'src/app/core/services/data-base';
 
 @Component({
   selector: 'app-dashboard',
@@ -37,13 +37,34 @@ export class DashboardPage implements OnInit {
       label:"تشغيل الشفاطات"
     },
   ];
+  data:any = null;
+  users = this.databaseService.getUsers();
+  newUserName = 'Aymen';
 
   constructor(
     private modalCtrl: ModalController,
-    private router: Router
-  ) { }
+    private router: Router,
+    private databaseService: DatabaseService
+  ) {
+    this.createUser();
+  }
+
+  async createUser(){
+    await this.databaseService.addUser(this.newUserName);
+    this.newUserName = '';
+  }
+
+  updateUser(user: User){
+    const active = user.active ? 1 : 0;
+    this.databaseService.updateUserById(user.id, active);
+  }
+
+  deleteUser(user: User){
+    this.databaseService.deleteUserById(user.id);
+  }
 
   ngOnInit() {
+    console.log(this.users);
   }
 
   openAccordingFn(){

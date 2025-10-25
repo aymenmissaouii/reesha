@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { StatusBar, Style } from '@capacitor/status-bar';
+import { DatabaseService } from './core/services/data-base';
+import { SplashScreen } from '@capacitor/splash-screen';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +10,16 @@ import { StatusBar, Style } from '@capacitor/status-bar';
   standalone: false,
 })
 export class AppComponent {
-  constructor() {
+  constructor(
+    private database: DatabaseService,
+  ) {
     this.init();
+    this.initApp();
+  }
+
+  async initApp(){
+    this.database.initialzPlugin();
+    SplashScreen.hide();
   }
 
     async init() {

@@ -25,8 +25,11 @@
       <!-- <app-accordion *ngIf="openAccording"></app-accordion> -->
     </div>
 
+    <div class="section-content">
+      <app-loop-component></app-loop-component>
+    </div>
     <!-- empty state -->
-     <div>
+     <div class="empty_state" *ngIf="data">
      <app-empty-state></app-empty-state>
      </div>
   </section>

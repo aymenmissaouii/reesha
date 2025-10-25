@@ -1,3 +1,6 @@
 <ion-button [disabled]="disabled" (click)="handleClick()" [color]="color">
-  <ion-icon [slot]="slot" [name]="icon"></ion-icon> {{text}}
+  @if (icon) {
+ <ion-icon [slot]="slot" [name]="icon"></ion-icon>
+  }
+  {{text}}
 </ion-button>

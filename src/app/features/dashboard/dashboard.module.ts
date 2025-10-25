@@ -13,6 +13,7 @@ import { EmptyStateComponent } from 'src/app/shared/ui/empty-state/empty-state.c
 import { HeaderComponent } from 'src/app/shared/ui/header/header.component';
 import { ModalComponent } from 'src/app/shared/ui/modal/modal.component';
 import { AccordionComponent } from "src/app/shared/ui/accordion/accordion.component";
+import { LoopComponentComponent} from "src/app/shared/ui/loop-component/loop-component.component";
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { AccordionComponent } from "src/app/shared/ui/accordion/accordion.compon
     EmptyStateComponent,
     HeaderComponent,
     ModalComponent,
-    AccordionComponent
+    AccordionComponent,
+    LoopComponentComponent
 ],
   declarations: [DashboardPage]
 })
